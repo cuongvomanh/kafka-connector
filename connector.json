@@ -1,0 +1,22 @@
+{
+  "name": "product-connector",
+  "config": {
+    "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+    "tasks.max": "1",
+    "database.hostname": "mariadb_product",
+    "database.whitelist": "product",
+    "database.name": "product",
+    "database.port": "3306",
+    "database.user": "root",
+    "database.password": "rootpass",
+    "database.server.id": "223344",
+    "database.server.name": "productdbserver",
+    "table.whitelist": "product.outbox",
+    "transforms": "outbox",
+    "transforms.outbox.type": "io.debezium.transforms.outbox.EventRouter",
+    "database.history.kafka.bootstrap.servers": "kafka:9092",
+    "database.history.kafka.topic": "dbhistory.productdb",
+    "database.history.skip.unparseable.ddl": "true",
+    "transforms.outbox.table.fields.additional.placement": "id:envelope:id"
+  }
+}
