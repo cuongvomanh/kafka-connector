@@ -17,7 +17,7 @@ mysql -h 127.0.0.1 -uroot --port 3307 -prootpass < insert_product.sql
 ./kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic outbox.event.ProductInfo --from-beginning
 
 ```
-
+```
 mkdir -p ./zookeeper/data
 mkdir -p ./zookeeper/txns
 mkdir -p ./zookeeper/logs
@@ -36,6 +36,6 @@ mkdir -p ./mariadb_order/config/
 touch ./mariadb_order/config/custom_my.cnf
 mkdir -p ./mongodb2/persist
 
-
+```
 
 
